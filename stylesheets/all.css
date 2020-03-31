@@ -224,8 +224,9 @@ table {
 }
 
 html {
-  background-image: url(../images/pattern.png);
+  background-image: url(../images/pattern-white.png);
   color: white;
+  overflow: hidden;
 }
 
 .wrap {
@@ -244,7 +245,7 @@ html {
 .swiper-slide {
   background-image: url(../images/pattern-darken.png);
   border: #D3B024 5px solid;
-  border-radius: 5px;
+  border-radius: 18px 5px 5px 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -312,6 +313,40 @@ html {
   text-align: center;
 }
 
+.card .card-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  background-color: #BF0000;
+  border: 5px solid #D3B024;
+  position: absolute;
+  left: -6px;
+  top: -6px;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .card-subtitle {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  font-size: 20px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #BF0000;
+  padding: 5px 10px;
+  border: 3px solid #D3B024;
+  z-index: 3;
+}
+
 .btn {
   width: 200px;
   height: 200px;
@@ -350,5 +385,44 @@ html {
 .btn:disabled {
   opacity: .6;
   cursor: default;
+}
+
+.d-none {
+  display: none;
+}
+
+.glory {
+  background-image: url(../images/glory.png);
+  width: 1500px;
+  height: 1500px;
+  position: absolute;
+  top: -500px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-animation: rotate infinite linear 20s;
+          animation: rotate infinite linear 20s;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: translateX(-50%) rotate(0);
+            transform: translateX(-50%) rotate(0);
+  }
+  to {
+    -webkit-transform: translateX(-50%) rotate(359deg);
+            transform: translateX(-50%) rotate(359deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: translateX(-50%) rotate(0);
+            transform: translateX(-50%) rotate(0);
+  }
+  to {
+    -webkit-transform: translateX(-50%) rotate(359deg);
+            transform: translateX(-50%) rotate(359deg);
+  }
 }
 /*# sourceMappingURL=all.css.map */

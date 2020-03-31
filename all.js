@@ -5,6 +5,8 @@ import data from './data.js';
 const template = `${data.map(item => {
   return `<div class="swiper-slide card">
     <div class="swiper-slide-inner">
+      <div class="card-badge">${item.word}</div>
+      <div class="card-subtitle">年薪：${item.salary}</div>
       <div class="square-img" style="background-image: url(${item.image})"></div>
       <div>
         <h2 class="card-title">${item.title}</h2>
@@ -24,6 +26,7 @@ const mainSwiper = new Swiper('.swiper-container', {
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: 'auto',
+  runCallbacksOnInit: false,
   coverflowEffect: {
     rotate: 50,
     stretch: 0,
@@ -45,6 +48,7 @@ const mainSwiper = new Swiper('.swiper-container', {
 });
 
 let isPlay = false;
+let isStart = false;
 let speed = 500;
 let maxSpeed = 80;
 let endSpeed = 1000;
@@ -52,9 +56,11 @@ const playBtn = $('#play');
 
 playBtn.on('click', function() {
   isPlay = !isPlay;
+  isStart = true;
   speed = 500;
   playSwiper();
   disableEle(playBtn, true);
+  $('.glory').addClass('d-none');
 });
 
 
@@ -71,11 +77,13 @@ const playSwiper = () => {
       mainSwiper.slideNext(speed);
     } else {
       disableEle(playBtn, false);
+      isStart = false;
+      $('.glory').removeClass('d-none');
     }
   }
 }
 mainSwiper.on('transitionEnd', function() {
-  playSwiper();
+  if (isStart) playSwiper();
 });
 
 const disableEle = (ele, disabled) => {

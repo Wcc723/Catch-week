@@ -12,8 +12,9 @@ $color-red-darken: #a80000;
 }
 
 html {
-  background-image: url(../images/pattern.png);
+  background-image: url(../images/pattern-white.png);
   color: white;
+  overflow: hidden;
 }
 
 .wrap {
@@ -32,7 +33,7 @@ html {
 .swiper-slide {
   background-image: url(../images/pattern-darken.png);
   border: $color-gold 5px solid;
-  border-radius: 5px;
+  border-radius: 18px 5px 5px 5px;
   display: flex;
   justify-content: stretch;
   align-items: stretch;
@@ -79,6 +80,32 @@ html {
     margin-bottom: 20px;
     text-align: center;
   }
+  .card-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: $color-red;
+    border: 5px solid $color-gold;
+    position: absolute;
+    left: -6px;
+    top: -6px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // transform: translate(-50%, -50%);
+  }
+  .card-subtitle {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    font-size: 20px;
+    transform: translateX(-50%);
+    background-color: $color-red;
+    padding: 5px 10px;
+    border: 3px solid $color-gold;
+    z-index: 3;
+  }
 }
 
 .btn {
@@ -114,5 +141,29 @@ html {
   &:disabled {
     opacity: .6;
     cursor: default;
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.glory {
+  background-image: url(../images/glory.png);
+  width: 1500px;
+  height: 1500px;
+  position: absolute;
+  top: -500px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: rotate infinite linear 20s;
+}
+
+@keyframes rotate {
+  from {
+    transform: translateX(-50%) rotate(0);
+  }
+  to {
+    transform: translateX(-50%) rotate(359deg);
   }
 }

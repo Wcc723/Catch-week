@@ -1,5 +1,5 @@
-import './node_modules/jquery/dist/jquery.slim.js';
-import Swiper from './node_modules/swiper/js/swiper.esm.browser.bundle.min.js';
+import './libs/jquery.slim.min.js';
+import Swiper from './libs/swiper.esm.browser.bundle.min.js';
 import data from './data.js';
 
 const template = `${data.map(item => {
@@ -15,9 +15,6 @@ const template = `${data.map(item => {
     </div>
   </div>`;
 }).join('') }`;
-
-console.log(data.length)
-
 
 $('.swiper-wrapper').html(template);
 
